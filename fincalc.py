@@ -74,6 +74,15 @@ def converter_taxa_anual_para_mensal(taxa_anual: float) -> float:
     return ((1 + taxa_anual / 100) ** (1 / 12) - 1) * 100
 
 
+def calcular_margem_liquida(receita_total: float, custos_totais: float) -> float:
+    """Calcula a margem de lucro líquida percentual de uma operação."""
+    if receita_total == 0:
+        return 0.0
+
+    lucro = receita_total - custos_totais
+    return (lucro / receita_total) * 100
+
+
 if __name__ == "__main__":
     print("Iniciando o sistema FinCalc...")
 
@@ -90,6 +99,14 @@ if __name__ == "__main__":
 
     imposto = calcular_irrf(3000.0)
     print(f"Imposto de Renda (Salário R$ 3.000): R$ {imposto:.2f}")
+
+    receita = 10000.0
+    custos = 7000.0
+
+    margem = calcular_margem_liquida(receita, custos)
+
+    print(f"Lucro líquido: R$ {receita - custos:.2f}")
+    print(f"Margem líquida: {margem:.2f}%")
 
     # TESTE DO ALUNO 3
     valor_parcela = calcular_parcela_price(10000.0, 1.5, 12)
