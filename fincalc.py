@@ -123,3 +123,7 @@ if __name__ == "__main__":
     # TESTE DO ALUNO 6
     taxa_mensal = converter_taxa_anual_para_mensal(12.0)
     print(f"Taxa mensal equivalente a 12% a.a.: {taxa_mensal:.4f}%")
+
+# TESTE DO ALUNO 7
+    margem = calcular_margem_liquida(1000.0, 700.0)
+    print(f"Margem de lucro líquida: {margem:.2f}%")
